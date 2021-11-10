@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
-
     return (
         <header id="header">
             <div className="container">
@@ -12,7 +11,7 @@ const Header = () => {
                     <div className="col-md-4">
                         <h1>Logo</h1>
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 nav">
                         <Link to="/">Home</Link>
                         <Link to="/explore">Explore</Link>
                         <Link to="/dashboard">Dashboard</Link>
