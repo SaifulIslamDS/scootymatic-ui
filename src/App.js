@@ -10,9 +10,9 @@ import Header from './Shared/Header/Header';
 import Explore from './Pages/Explore/Explore/Explore';
 import Footer from './Shared/Footer/Footer';
 import Dashboard from './Admin/Dashboard/Dashboard';
-import Login from './Admin/Login/Login';
-import Register from './Admin/Register/Register';
 import AuthProvider from './Context/AuthProvider';
+import Login from './Pages/Login/Login';
+import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -32,12 +32,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard ></Dashboard>
-            </Route>
-            <Route path="/register">
-              <Register></Register>
-            </Route>
+            </PrivateRoute>
           </Switch>
           {/* Footer  */}
           <Footer></Footer>

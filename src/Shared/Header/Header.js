@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import useAuths from '../../Hooks/useAuths';
 
 const Header = () => {
+    const {user, handleSignOut} = useAuths();
+    
     return (
         <header id="header">
             <div className="container">
@@ -14,8 +17,14 @@ const Header = () => {
                         <Link to="/">Home</Link>
                         <Link to="/explore">Explore</Link>
                         <Link to="/dashboard">Dashboard</Link>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
+                        { 
+                            (user?.email) ? (
+                            <>
+                                <span>{user?.email}</span>
+                                <Link to="/login"><button onClick={handleSignOut}>Logout</button></Link>
+                            </>
+                            ) : (<Link to="/login">Login</Link>)
+                        }
                     </div>
                 </div>
             </div>
