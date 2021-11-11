@@ -3,7 +3,7 @@ import './HomeProducts.css';
 import HomeProduct from '../HomeProduct/HomeProduct';
 
 const HomeProducts = () => {
-    const [scooters, setScooters] = useState([])
+    const [scooters, setScooters] = useState([]);
 
     useEffect(()=> {
         const url = `http://localhost:7000/scooters`;

@@ -1,0 +1,25 @@
+#header {
+    background-color: #D0364B;
+    padding: 15px 0;
+}
+#header a {
+    color: white;
+    text-decoration: none;
+}
+.logo {
+    text-align: left;
+    color: white;
+}
+.menubar {
+    text-align: right;
+    margin: 10px 0; 
+}
+
+.menubar a {
+    margin: 10px 0;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+.menubar a:hover {
+    background-color: #bb9b9f;
+}

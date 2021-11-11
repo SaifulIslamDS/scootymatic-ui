@@ -1,4 +1,6 @@
 #main {
   text-align: center;
 }
-
+.product-image {
+  height: 400px;
+}
