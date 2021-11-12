@@ -11,7 +11,7 @@ import Explore from './Pages/Explore/Explore/Explore';
 import Footer from './Shared/Footer/Footer';
 import Dashboard from './Admin/Dashboard/Dashboard';
 import AuthProvider from './Context/AuthProvider';
-import Login from './Pages/Login/Login';
+import Login from './Pages/Login/Login/Login';
 import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
 
 function App() {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { useHistory, useLocation } from 'react-router';
-import useAuths from '../../Hooks/useAuths';
-import loginImage from '../../Images/login-banner.png';
+import useAuths from '../../../Hooks/useAuths';
+import loginImage from '../../../Images/login-banner.png';
 
 
 const Login = () => {
