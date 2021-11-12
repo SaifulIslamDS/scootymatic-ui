@@ -16,10 +16,10 @@ const Header = () => {
                     <div className="col-md-8 menubar">
                         <Link to="/">Home</Link>
                         <Link to="/explore">Explore</Link>
-                        <Link to="/dashboard">Dashboard</Link>
                         { 
                             (user?.email) ? (
                             <>
+                                <Link to="/dashboard">Dashboard</Link>
                                 <span className="text-white">{user?.email}</span>
                                 <Link to="/login"
                                 onClick={logout}>
