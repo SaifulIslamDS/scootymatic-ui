@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import useAuths from '../../Hooks/useAuths';
+import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
-    const {user, handleSignOut} = useAuths();
+    const {user, handleSignOut} = useAuth();
     
     return (
         <header id="header">

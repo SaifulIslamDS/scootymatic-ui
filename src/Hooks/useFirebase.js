@@ -1,25 +1,19 @@
-import { useEffect, useState } from "react";
-import initializeAuthentication from '../Firebase/firebase.init';
-import { 
-    getAuth, 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword, 
-    onAuthStateChanged, 
-    signOut } 
-from "firebase/auth";
-// Firebase auth initialization
-initializeAuthentication();
+import firebaseInitialization from "../Firebase/firebase.init";
+import { useState, useEffect } from 'react';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+
+
+// initialize firebase app
+firebaseInitialization();
 
 const useFirebase = () => {
-    // set users 
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
 
     const auth = getAuth();
 
-    // user registration 
-    const handleUserRegistration = (email, password) => {
+    const registerUser = (email, password) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -32,8 +26,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    // user sign in function 
-    const handleUserSignin = (email, password, location, history) => {
+    const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -46,7 +39,8 @@ const useFirebase = () => {
             })
             .finally(() => setIsLoading(false));
     }
-    // User observer
+
+    // observer user state
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -59,26 +53,24 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, [])
 
-      // sign out method
-      const handleSignOut = () => {
+    const logout = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful.
         }).catch((error) => {
             // An error happened.
         })
-        .finally(() => setIsLoading(false));
-    };
+            .finally(() => setIsLoading(false));
+    }
 
-
-    return (
+    return {
         user,
         isLoading,
         authError,
-        handleUserRegistration,
-        handleUserSignin,
-        handleSignOut
-    );
-};
+        registerUser,
+        loginUser,
+        logout,
+    }
+}
 
 export default useFirebase;
