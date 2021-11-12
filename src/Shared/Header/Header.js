@@ -4,7 +4,7 @@ import './Header.css';
 import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
-    const {user, handleSignOut} = useAuth();
+    const {user, logout} = useAuth();
     
     return (
         <header id="header">
@@ -22,7 +22,7 @@ const Header = () => {
                             <>
                                 <span className="text-white">{user?.email}</span>
                                 <Link to="/login"
-                                onClick={handleSignOut}>
+                                onClick={logout}>
                                     Logout
                                 </Link>
                             </>
