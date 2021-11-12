@@ -1,0 +1,17 @@
+.form-col {
+    margin: 50px 20px;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=submit]
+{
+    width: 60%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+input[type=submit] {
+    margin: 5px 0;
+    padding: 5px;
+}
