@@ -1,17 +1,34 @@
 .form-col {
-    margin: 50px 20px;
+    padding: 30px;
 }
+#login-form {
+    margin-top: 20px;
+    padding: 20px 0;
+}
+
 input[type=text],
 input[type=email],
 input[type=password],
-input[type=submit]
+input[type=submit],
+.form-col button 
 {
-    width: 60%;
+    width: 80%;
     margin: 10px 0;
     padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #000;
 }
 
+.form-col button,
 input[type=submit] {
-    margin: 5px 0;
-    padding: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 0;
+}
+.form-col button {
+    margin: 20px auto;
+}
+.form-col hr {
+    width: 80%;
+    margin: auto;
 }
