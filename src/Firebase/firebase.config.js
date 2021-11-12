@@ -5,6 +5,6 @@ const firebaseConfig = {
     projectId: "scootymatic-ss",
     storageBucket: "scootymatic-ss.appspot.com",
     messagingSenderId: "869195090209",
-    appId: "1:869195090209:web:f866734a37a9c2beb25660"
+    appId: "1:869195090209:web:f866734a37a9c2beb25660",
 };
 export default firebaseConfig;

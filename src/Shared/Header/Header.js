@@ -20,8 +20,11 @@ const Header = () => {
                         { 
                             (user?.email) ? (
                             <>
-                                <span>{user?.email}</span>
-                                <Link to="/login"><button onClick={handleSignOut}>Logout</button></Link>
+                                <span className="text-white">{user?.email}</span>
+                                <Link to="/login"
+                                onClick={handleSignOut}>
+                                    Logout
+                                </Link>
                             </>
                             ) : (<Link to="/login">Login</Link>)
                         }

@@ -1,27 +1,18 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { useHistory, useLocation } from 'react-router';
-import useAuths from '../../../Hooks/useAuths';
+// import { useHistory, useLocation } from 'react-router';
+// import useAuths from '../../../Hooks/useAuths';
 import loginImage from '../../../Images/login-banner.png';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
-    const {
-        user, 
-        handleGoogleLogin, 
-        handleRegistration, 
-        isLogIn, 
-        handleNameChange, 
-        handleEmailChange, 
-        handlePasswordChange,
-        toggleLogin,
-        error,
-        handleResetPassword,
-        handleSignOut 
-    } = useAuths() ;
+    // const {
+    //     user, 
+    // } = useAuths() ;
 
     const [loginData, setLoginData] = useState({});
-
+   
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -36,7 +27,7 @@ const Login = () => {
     }
 
     // handle redirect 
-    const location = useLocation();
+    /* const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from;
     const googleLoginBtn = () => {
@@ -44,10 +35,10 @@ const Login = () => {
             .then(result => {
                 history.push(redirect_uri);
             })
-    }
+    } */
 
     return (
-        <section id="authentication">
+        <section id="login-component">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6">
@@ -69,25 +60,30 @@ const Login = () => {
                                 type="password" 
                                 name="password" 
                                 onBlur={handleOnChange}
-                                placeholder="Your password" 
+                                placeholder="Your password"
                             />
 
                             <input type="submit" value="Login" />
                         </form>
-                        <h6>Already registered?</h6>
+
+                        <h6>
+                            <Link to="/register">New user? Please register.</Link>
+                        </h6>
+
                         <h6>or</h6>
+                        
                         <hr />
                         {/* Google login button  */}
-                        { 
+                        {/* { 
                             (user?.email) ? ( 
-                            <button onClick={handleSignOut}>Logout</button>) : (
+                            <button>Logout</button>) : (
                             <>
-                                <button onClick={googleLoginBtn} >Signin with Google</button>
+                                <button >Signin with Google</button>
                                 <h2 className="username">{user?.displayName}</h2>
                                 <h3 className="useremail">{user?.email}</h3>
                             </>
                             )
-                        }
+                        } */}
                     </div>
                 </div>
             </div>
