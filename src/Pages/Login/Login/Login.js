@@ -7,7 +7,7 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, isLoading, authError } = useAuth();
+    const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -22,6 +22,9 @@ const Login = () => {
     const handleLoginSubmit = e => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
+    }
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
     }
     return (
         <Container>
@@ -48,7 +51,13 @@ const Login = () => {
                             onChange={handleOnChange}
                             variant="standard" />
 
-                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
+                        <Button 
+                            sx={{ width: '75%', m: 1 }} 
+                            type="submit" 
+                            variant="contained">
+                                Login
+                        </Button>
+
                         <NavLink
                             style={{ textDecoration: 'none' }}
                             to="/register">
@@ -60,6 +69,15 @@ const Login = () => {
                         {authError && <Alert severity="error">{authError}</Alert>}
                     
                     </form>
+                    <h6>or</h6>
+                    <Button 
+                        sx={{ width: '75%', m: 1 }} 
+                        variant="contained"
+                        onClick={handleGoogleSignIn}
+                    >
+                        Login with google
+                    </Button>
+
                 </Grid>
             </Grid>
         </Container>
