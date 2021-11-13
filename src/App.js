@@ -14,6 +14,8 @@ import AuthProvider from './Context/AuthProvider';
 import Login from './Pages/Login/Login/Login';
 import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
 import Register from './Pages/Login/Register/Register';
+import Order from './Admin/Order/Order';
+import MyOrders from './Admin/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -38,6 +40,12 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard ></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/myorders">
+                <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/order/:id">
+                <Order></Order>
             </PrivateRoute>
           </Switch>
           {/* Footer  */}
