@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import MyOrders from '../MyOrders/MyOrders';
 import Payment from '../Payment/Payment';
 import ReviewAdmin from '../ReviewAdmin/ReviewAdmin';
-// import useAuth from '../../Hooks/useAuth';
+import useAuth from '../../Hooks/useAuth';
 import './Dashborad.css';
 
 const Dashboard = () => {
-    // const { user, logout } = useAuth();
+    const {logout } = useAuth();
     const [ control, setControl ] = useState("myOrders");
 
     return (
@@ -18,6 +18,7 @@ const Dashboard = () => {
                             <li onClick={() => setControl("myOrders")}> My Orders</li>
                             <li onClick={() => setControl("ReviewAdmin")}>Reviews</li>
                             <li onClick={() => setControl("Payment")}> Payment </li>
+                            <li onClick={logout} >Logout</li>
                         </ul>
                     </div>
                     <div className="col-md-9 dashboard-content">
