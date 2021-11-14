@@ -4,7 +4,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:7000/reviews`;
+        const url = `https://scootymatic.herokuapp.com/reviews`;
         fetch(url)
         .then(res => res.json())
         .then(data => setReviews(data))

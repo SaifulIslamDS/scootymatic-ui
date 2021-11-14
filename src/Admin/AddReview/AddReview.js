@@ -9,7 +9,7 @@ const AddReview = () => {
     const {user} = useAuth();
 
     const handleAddReview = (data) => {
-        const url = `http://localhost:7000/reviews`;
+        const url = `https://scootymatic.herokuapp.com/reviews`;
         fetch(url, {
             method: 'POST',
             headers: {

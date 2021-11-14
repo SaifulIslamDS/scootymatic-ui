@@ -5,7 +5,7 @@ const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     
     useEffect(() => {
-        fetch("http://localhost:7000/scooters")
+        fetch("https://scootymatic.herokuapp.com/scooters")
         .then(res => res.json())
         .then(data => setProducts(data));
     }, []);
@@ -13,7 +13,7 @@ const ManageProducts = () => {
     const handleDeleteProduct = id => {
         const confirmation = window.confirm("Are you sure you want to delete this product?");
         if (confirmation) {            
-            const url = `http://localhost:7000/scooters/${id}`;
+            const url = `https://scootymatic.herokuapp.com/scooters/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -40,7 +40,7 @@ const ManageProducts = () => {
             <h2>Manage products</h2>
 
             
-            <table style={{"width": "100%"}} id="resort-table"> 
+            <table style={{"width": "100%"}} id="product-table"> 
                             {/* Resort table headings  */}
                             <tr>
                                 <th>Name</th>
@@ -55,8 +55,8 @@ const ManageProducts = () => {
 
                             {
                                 products.map(product => 
-                                <tr key={product._id} className="text-left">
-                                    <td className="text-xl">{product.name}</td>
+                                <tr key={product._id}>
+                                    <td>{product.name}</td>
                                     <td><img src={product.img} className="img-fluid"  alt="" /></td> 
                                     <td>{product.price}</td>
                                     <td>{product.description}</td>
@@ -69,18 +69,7 @@ const ManageProducts = () => {
                                 </tr>
                                 )
                             }
-
-                            {/* {
-                                resortTable.map(rsrt => <ResortTable
-                                    key={resortTable.name}
-                                    rsrt={rsrt}
-                                />)
-                            } */}
                         </table>
-
-
-
-
         </div>
     );
 };

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
-const Updatescooter = () => {
+const UpdateProduct = () => {
     const {id} = useParams();
     const [scooter, setScooter] = useState({});
     // load scooters
     useEffect(() => {
-        const url = `http://localhost:7000/scooters/${id}`;
+        const url = `https://scootymatic.herokuapp.com/scooters/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data =>setScooter(data))
@@ -60,7 +60,7 @@ const Updatescooter = () => {
     
     // Update form 
     const handleUpdateScooter = e => {
-        const url = `http://localhost:7000/scooters/${id}`;
+        const url = `https://scootymatic.herokuapp.com/scooters/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -84,9 +84,8 @@ const Updatescooter = () => {
 
     return (
         <section id="update-scooter">
-            <h2 className="text-5xl">Update <span className="scooter-name">{scooter.name}</span></h2>
-            <p className="text-2xl mt-4">id: {id}</p>
-
+            <h2>Update <span className="scooter-name">{scooter.name}</span></h2>
+            
             {/* Update form  */}
             
             <form onSubmit={handleUpdateScooter} id="update-scooter-form">
@@ -107,4 +106,4 @@ const Updatescooter = () => {
     );
 };
 
-export default Updatescooter;
+export default UpdateProduct;

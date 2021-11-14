@@ -4,6 +4,7 @@ import Payment from '../Payment/Payment';
 import AddProduct from '../AddProduct/AddProduct';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import AddReview from '../AddReview/AddReview';
+import ManageReviews from '../ManageReviews/ManageReviews';
 import useAuth from '../../Hooks/useAuth';
 import './Dashborad.css';
 
@@ -21,6 +22,7 @@ const Dashboard = () => {
                             <li onClick={() => setControl("AddProduct")}>Add Product</li>
                             <li onClick={() => setControl("ManageProducts")}>Manage Products</li>
                             <li onClick={() => setControl("AddReview")}>Add Review</li>
+                            <li onClick={() => setControl("ManageReviews")}>Manage Reviews</li>
                             <li onClick={() => setControl("Payment")}> Payment </li>
                             <li onClick={logout} >Logout</li>
                         </ul>
@@ -30,6 +32,7 @@ const Dashboard = () => {
                         {control === "AddProduct" && <AddProduct />}
                         {control === "ManageProducts" && <ManageProducts />}
                         {control === "AddReview" && <AddReview />}
+                        {control === "ManageReviews" && <ManageReviews />}
                         {control === "Payment" && <Payment />}
                     </div>
                 </div>

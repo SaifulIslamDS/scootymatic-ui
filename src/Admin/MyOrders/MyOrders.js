@@ -8,7 +8,7 @@ const MyOrders = () => {
 
     // load orders 
     useEffect(() => {
-        const url = `http://localhost:7000/orders`;
+        const url = `https://scootymatic.herokuapp.com/orders`;
         fetch(url)
         .then(res => res.json())
         .then(data => setOrders(data))
@@ -18,7 +18,7 @@ const MyOrders = () => {
     const handleDeleteOrder = id => {        
         const confirmation = window.confirm("Are you sure you want to cancel the order?"); 
         if ( confirmation ) { 
-            const url = `http://localhost:7000/orders/${id}`;
+            const url = `https://scootymatic.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

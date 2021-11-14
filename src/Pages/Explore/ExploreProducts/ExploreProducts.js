@@ -6,7 +6,7 @@ const ExploreProducts = () => {
     const [scooters, setScooters] = useState([]);
 
     useEffect(()=> {
-        const url = `http://localhost:7000/scooters`;
+        const url = `https://scootymatic.herokuapp.com/scooters`;
         fetch(url)
         .then(res => res.json())
         .then(data => setScooters(data))

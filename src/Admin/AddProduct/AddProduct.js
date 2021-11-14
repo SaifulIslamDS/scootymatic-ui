@@ -7,7 +7,7 @@ const AddProduct = () => {
     const {user} = useAuth();
 
     const handleAddProduct = (data) => {
-        const url = `http://localhost:7000/scooters`;
+        const url = `https://scootymatic.herokuapp.com/scooters`;
         fetch(url, {
             method: 'POST',
             headers: {

@@ -12,14 +12,14 @@ const Order = () => {
     
     // load products 
     useEffect(() => {
-        const url = `http://localhost:7000/scooters/${id}`;
+        const url = `https://scootymatic.herokuapp.com/scooters/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setScooter(data))
     }, []);
 
     const onConfirm = (data) => {
-        const url = `http://localhost:7000/orders`;
+        const url = `https://scootymatic.herokuapp.com/orders`;
         fetch(url, {
             method: 'POST',
             headers: {

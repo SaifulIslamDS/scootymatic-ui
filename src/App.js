@@ -18,6 +18,8 @@ import Order from './Admin/Order/Order';
 import MyOrders from './Admin/MyOrders/MyOrders';
 import AddReview from './Admin/AddReview/AddReview';
 import UpdateProduct from './Admin/UpdateProduct/UpdateProduct';
+import UpdateReview from './Admin/UpdateReview/UpdateReview';
+import ManageReviews from './Admin/ManageReviews/ManageReviews';
 
 function App() {
   return (
@@ -52,8 +54,8 @@ function App() {
             <PrivateRoute path="/order/:id">
                 <Order></Order>
             </PrivateRoute>
-            <PrivateRoute path="/review/:id">
-                <AddReview></AddReview>
+            <PrivateRoute exact path="/review/update/:id">
+                <UpdateReview></UpdateReview>
             </PrivateRoute>
           </Switch>
           {/* Footer  */}
