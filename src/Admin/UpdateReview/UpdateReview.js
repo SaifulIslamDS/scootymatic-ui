@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
+import useAuth from '../../Hooks/useAuth';
 
 
 const UpdateReview = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const {id} = useParams();
     const [review, setReview] = useState({});
+    const {user} = useAuth();
+
     // load reviews
     useEffect(() => {
         const url = `https://scootymatic.herokuapp.com/reviews/${id}`;
@@ -90,15 +95,34 @@ const UpdateReview = () => {
 
             {/* Update form  */}
             
-            <form onSubmit={handleUpdateReview} id="update-review-form">
-                <input type="text" value={review.name} onChange={handleNameChange} placeholder="Name of reviewer"/>
-
-                <input type="email" value={review.email || ''} onChange={handleEmailChange} placeholder="email"/>
-
-                <input value={review.designation||''} onChange={handleDesignationChange} placeholder="designation"/>
-
-                <textarea value={review.review || ''} onChange={handleReviewChange} placeholder="review" />
-                
+            <form onSubmit={handleSubmit(handleUpdateReview)} id="update-review-form">
+                <input 
+                    defaultValue={user?.displayName}
+                    type="text"
+                    {...register("name", { required: true })} 
+                    onChange={handleNameChange} 
+                    placeholder="Name of reviewer"
+                />
+                <input 
+                    defaultValue={user?.email}
+                    type="email"
+                    {...register("email", { required: true })} 
+                    onChange={handleEmailChange} 
+                    placeholder="email"
+                />
+                <input 
+                    defaultValue={review?.designation}
+                    type="text"
+                    {...register("designation", { required: true })} 
+                    onChange={handleDesignationChange} 
+                    placeholder="Designation"
+                />
+                <textarea 
+                    defaultValue={review?.review}
+                    {...register("review", { required: true })} 
+                    onChange={handleReviewChange} 
+                    placeholder="Designation"
+                />                
                 <input type="submit" value="Update Review" />
             </form>
         </section>
