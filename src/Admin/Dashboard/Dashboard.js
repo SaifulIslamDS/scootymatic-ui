@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import MyOrders from '../MyOrders/MyOrders';
 import Payment from '../Payment/Payment';
-import ReviewAdmin from '../ReviewAdmin/ReviewAdmin';
+import AddProduct from '../AddProduct/AddProduct';
+import ManageProducts from '../ManageProducts/ManageProducts';
+import AddReview from '../AddReview/AddReview';
 import useAuth from '../../Hooks/useAuth';
 import './Dashborad.css';
 
 const Dashboard = () => {
     const {logout } = useAuth();
-    const [ control, setControl ] = useState("myOrders");
+    const [ control, setControl ] = useState("MyOrders");
 
     return (
         <section id="dashboard">
@@ -15,15 +17,19 @@ const Dashboard = () => {
                 <div className="row">
                     <div className="col-md-3" id="dashboard-nav">
                         <ul>
-                            <li onClick={() => setControl("myOrders")}> My Orders</li>
-                            <li onClick={() => setControl("ReviewAdmin")}>Reviews</li>
+                            <li onClick={() => setControl("MyOrders")}> My Orders</li>
+                            <li onClick={() => setControl("AddProduct")}>Add Product</li>
+                            <li onClick={() => setControl("ManageProducts")}>Manage Products</li>
+                            <li onClick={() => setControl("AddReview")}>Add Review</li>
                             <li onClick={() => setControl("Payment")}> Payment </li>
                             <li onClick={logout} >Logout</li>
                         </ul>
                     </div>
                     <div className="col-md-9 dashboard-content">
-                        {control === "myOrders" && <MyOrders />}
-                        {control === "ReviewAdmin" && <ReviewAdmin />}
+                        {control === "MyOrders" && <MyOrders />}
+                        {control === "AddProduct" && <AddProduct />}
+                        {control === "ManageProducts" && <ManageProducts />}
+                        {control === "AddReview" && <AddReview />}
                         {control === "Payment" && <Payment />}
                     </div>
                 </div>

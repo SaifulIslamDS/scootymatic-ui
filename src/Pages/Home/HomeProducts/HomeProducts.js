@@ -10,7 +10,7 @@ const HomeProducts = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setScooters(data))
-    });
+    }, []);
 
 
     return (

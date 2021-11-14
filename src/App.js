@@ -16,6 +16,8 @@ import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
 import Register from './Pages/Login/Register/Register';
 import Order from './Admin/Order/Order';
 import MyOrders from './Admin/MyOrders/MyOrders';
+import AddReview from './Admin/AddReview/AddReview';
+import UpdateProduct from './Admin/UpdateProduct/UpdateProduct';
 
 function App() {
   return (
@@ -41,11 +43,17 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard ></Dashboard>
             </PrivateRoute>
+            <PrivateRoute path="/scooter/update/:id">
+                <UpdateProduct></UpdateProduct>
+            </PrivateRoute>
             <PrivateRoute path="/myorders">
                 <MyOrders></MyOrders>
             </PrivateRoute>
             <PrivateRoute path="/order/:id">
                 <Order></Order>
+            </PrivateRoute>
+            <PrivateRoute path="/review/:id">
+                <AddReview></AddReview>
             </PrivateRoute>
           </Switch>
           {/* Footer  */}

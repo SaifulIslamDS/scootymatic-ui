@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './Reviews.css';
-
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -18,7 +16,7 @@ const Reviews = () => {
             <div className="container">
                 <div className="row">
                 {
-                    reviews.slice(0,3).map(review => <div className="col-md-4"
+                    reviews.map(review => <div className="col-md-4"
                         key = {review._id} 
                         review = {review}
                         >                        
