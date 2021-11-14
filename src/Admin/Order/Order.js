@@ -54,9 +54,7 @@ const Order = () => {
 
                             <input value={scooter?.name} {...register("name", { required: true })} />
 
-                            <input value={scooter?.img} {...register("img", { required: true })} />
-
-                            <input {...register("city", { required: true })} placeholder="Your city" />
+                            <input {...register("city", { required: true })} placeholder="Your address" />
 
                             <input {...register("phone", { required: true }) } placeholder="Your contact number"  />
                          

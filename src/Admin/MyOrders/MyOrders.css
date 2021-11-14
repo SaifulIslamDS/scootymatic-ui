@@ -1,0 +1,32 @@
+#manage-orders {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#order-table img {
+    padding: 10px;
+}
+
+#order-table {
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #order-table td, #order-table  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #order-table  tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #order-table  tr:hover {background-color: #ddd;}
+  
+  #order-table  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7d7b92;
+    color: white;
+  }
