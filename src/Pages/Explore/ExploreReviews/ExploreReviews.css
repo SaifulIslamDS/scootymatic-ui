@@ -1,0 +1,21 @@
+#explore-reviews {
+    background-color: #294B50;
+    padding: 50px 0;
+    color: white;
+}
+
+#explore-reviews h4 {
+    margin: 10px 0;
+}
+
+section#explore-reviews p {
+    font-size: 1.5em;
+}
+
+#explore-reviews h5 {
+    font-size: 1.1em;
+}
+
+#explore-reviews h6 {
+    font-size: 1em;
+}

@@ -16,7 +16,7 @@ const HomeProducts = () => {
     return (
         <section id="products">
             <div className="container">
-                <h2>Products</h2>
+                <h2 className="section-title">Some of our awesome scooters</h2>
                 <div className="row">
                 {
                     scooters.slice(0,6).map(scooter => <HomeProduct

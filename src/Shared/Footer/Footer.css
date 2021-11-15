@@ -3,3 +3,28 @@ footer#footer {
     color: white;
     padding: 20px 0;
 }
+footer#footer h5 {
+    text-align: left;
+    padding-left: 30px;
+}
+
+ul.footer-list {
+    margin-top: 20px;
+    list-style: none;
+    text-align: left;
+}
+
+ul.footer-list li {
+    padding: 3px 0;
+}
+
+ul.footer-list li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+ul.footer-list li a:hover {
+    background: white;
+    color: red;
+}

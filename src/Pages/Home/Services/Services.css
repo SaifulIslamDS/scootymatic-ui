@@ -1,0 +1,20 @@
+section#home-services {
+    background-color: #294b4f;
+    color: white;
+    padding: 50px 0;
+}
+
+.features h2 {
+    padding: 20px 0;
+    color: #b4ff00;
+    font-size: 2.2em;
+}
+
+.features {
+    text-align: left;
+}
+
+.features p {
+    color: aquamarine;
+    font-size: 1.2em;
+}

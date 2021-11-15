@@ -11,12 +11,12 @@ const HomeProduct = (props) => {
     }
 
     return (
-        <div className="col-md-6">
+        <div className="col-md-6 product-col">
             <h3>{name}</h3>
             <img className="product-image img-fluid" src={img} alt="" />
-            <h4> € {price} </h4>
+            <h4>Price: € {price} </h4>
             <p>{description}</p>
-            <button onClick={handleOrderNow} className="btn btn-info">Order now</button>
+            <button onClick={handleOrderNow} className="btn btn-order">Order now</button>
         </div>
     );
 };

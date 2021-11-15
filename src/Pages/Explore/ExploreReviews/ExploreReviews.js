@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './ExploreReviews.css';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -11,18 +12,19 @@ const Reviews = () => {
     }, []);
 
     return (
-        <section id="home-reviews">
-            <h4>Reviews</h4>
+        <section id="explore-reviews">
+            <h4 className="section-title">Clients say about Scootymatic</h4>
             <div className="container">
                 <div className="row">
                 {
                     reviews.map(review => <div className="col-md-4"
+
                         key = {review._id} 
                         review = {review}
                         >                        
-                            <h4>{review.name}</h4>
-                            <h5>{review.designation}</h5>
                             <p>{review.review}</p>
+                            <h5>{review.name}</h5>
+                            <h6>{review.designation}</h6>
 
                         </div>
                     )

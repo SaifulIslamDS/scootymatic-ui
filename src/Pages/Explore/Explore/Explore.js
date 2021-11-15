@@ -5,11 +5,10 @@ import './Explore.css';
 
 const Explore = () => {
     return (
-        <div>
-            <h2>Explore more</h2>
+        <section id="explore-page">
             <ExploreProducts></ExploreProducts>
             <ExploreReviews></ExploreReviews>
-        </div>
+        </section>
     );
 };
 
