@@ -1,14 +1,14 @@
-#add-review-form {
+#add-product-form {
     width: 75%;
     margin: auto;
 }
 
-#add-review-form input, #add-review-form textarea {
+#add-product-form input, #add-product-form textarea {
     width: 80%;
     padding: 10px;
 }
 
-#add-review-form input[type=submit] {
+#add-product-form input[type=submit] {
     display: block;
     margin: auto;
     padding: 10px 0;

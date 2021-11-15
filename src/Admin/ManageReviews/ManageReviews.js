@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './ManageReviews.css';
 
 const ManageReviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -41,7 +42,7 @@ const ManageReviews = () => {
             <h2>Manage reviews</h2>
 
             
-            <table style={{"width": "100%"}} id="resort-table"> 
+            <table style={{"width": "100%"}} id="review-table"> 
                             {/* Resort table headings  */}
                             <tr>
                                 <th>Name</th> 

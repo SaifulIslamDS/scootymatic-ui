@@ -1,3 +1,23 @@
+#order-form {
+    margin: 20px 10px;
+    padding: 10px;
+}
 #order-form input {
     width: 100%;
+}
+
+#order-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.product-detail {
+    text-align: left;
+}
+.product-detail h4 {
+    margin-bottom: 10px;
+}
+
+.product-detail p {
+    font-size: 18px;
+    line-height: 1.5;
 }

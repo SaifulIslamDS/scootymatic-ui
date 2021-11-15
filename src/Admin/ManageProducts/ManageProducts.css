@@ -1,0 +1,26 @@
+#product-table img {
+    padding: 10px;
+}
+
+#product-table {
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #product-table td, #product-table  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #product-table  tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #product-table  tr:hover {background-color: #ddd;}
+  
+  #product-table  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7d7b92;
+    color: white;
+  }

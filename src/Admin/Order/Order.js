@@ -40,7 +40,7 @@ const Order = () => {
             <h2>Order {scooter.name}</h2>
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-6 col-sm-12">
+                    <div className="col-lg-6 col-sm-12 product-detail">
                         <img className="img-fluid" src={scooter.img} alt="" />
                         <h4>Price: € {scooter.price}</h4>
                         <p>Resort details: {scooter.description}</p>
