@@ -22,7 +22,7 @@ const Reviews = () => {
                         key = {review._id} 
                         review = {review}
                         >                        
-                            <p>{review.review}</p>
+                            <p className="review-text"> <q>{review.review}</q> </p>
                             <h5>{review.name}</h5>
                             <h6>{review.designation}</h6>
 
