@@ -7,7 +7,7 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+    const { user, loginUser, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -23,9 +23,9 @@ const Login = () => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
-    const handleGoogleSignIn = () => {
+    /* const handleGoogleSignIn = () => {
         signInWithGoogle(location, history)
-    }
+    } */
     return (
         <Container>
             <Grid container spacing={2}>
