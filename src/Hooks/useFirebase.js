@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
+    const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
     
@@ -95,6 +96,13 @@ const useFirebase = () => {
         .then()
     }
 
+    useEffect(() => {
+        fetch(`https://scootymatic.herokuapp.com/users/${user.email}`)
+        .then(res => res.json())
+        .then(data => setAdmin(data.admin))
+    } , [user.email]);
+
+
 
 
     // logout from de
@@ -110,6 +118,7 @@ const useFirebase = () => {
 
     return {
         user,
+        admin,
         isLoading,
         authError,
         registerUser,

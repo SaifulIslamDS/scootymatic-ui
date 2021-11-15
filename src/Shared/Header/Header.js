@@ -11,7 +11,9 @@ const Header = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 logo">
-                        <Link to="/"><h2>Logo</h2></Link>
+                        <Link to="/">
+                            <h2>ScootyMatic</h2>
+                        </Link>
                     </div>
                     <div className="col-md-8 menubar">
                         <Link to="/">Home</Link>

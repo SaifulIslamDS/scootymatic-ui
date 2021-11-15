@@ -48,7 +48,7 @@ const Order = () => {
                     <div className="col-lg-6 col-sm-12">
                         <form id="order-form" onSubmit={handleSubmit(onConfirm)}>
                             
-                            <input defaultValue={user?.displayName} {...register("displayName", { required: true })} />
+                            <input value={user?.displayName} {...register("displayName", { required: true })} />
 
                             <input value={user?.email} {...register("email", { required: true })} />
 
