@@ -69,14 +69,14 @@ const Login = () => {
                         {authError && <Alert severity="error">{authError}</Alert>}
                     
                     </form>
-                    <h6>or</h6>
+                    {/* <h6>or</h6>
                     <Button 
                         sx={{ width: '75%', m: 1 }} 
                         variant="contained"
                         onClick={handleGoogleSignIn}
                     >
                         Login with google
-                    </Button>
+                    </Button> */}
 
                 </Grid>
             </Grid>
