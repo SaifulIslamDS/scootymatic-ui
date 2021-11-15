@@ -24,6 +24,9 @@ const useFirebase = () => {
                 displayName : username
             };
             setUser(newUser);
+            // save user to database
+            saveUser(email, username);
+
             updateProfile(auth.currentUser, {
                 displayName: username
             }).then(() => {
@@ -77,7 +80,22 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, [])
+    }, []);
+
+    // Save user to database
+    const saveUser = (email, displayName) => {
+        const user = {email, displayName};
+        fetch('https://scootymatic.herokuapp.com/users', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then()
+    }
+
+
 
     // logout from de
     const logout = () => {

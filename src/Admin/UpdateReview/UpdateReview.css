@@ -1,0 +1,18 @@
+#update-review-form {
+    width: 75%;
+    margin: auto;
+}
+
+#update-review-form input, #update-review-form textarea {
+    width: 80%;
+    padding: 10px;
+}
+
+#update-review-form input[type=submit] {
+    display: block;
+    margin: auto;
+    padding: 10px 0;
+    background-color: #B7030A;
+    color: white;
+    width: 25%;
+}

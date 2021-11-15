@@ -1,0 +1,18 @@
+#update-scooter-form {
+    width: 75%;
+    margin: auto;
+}
+
+#update-scooter-form input, #update-scooter-form textarea {
+    width: 80%;
+    padding: 10px;
+}
+
+#update-scooter-form input[type=submit] {
+    display: block;
+    margin: auto;
+    padding: 10px 0;
+    background-color: #B7030A;
+    color: white;
+    width: 25%;
+}
