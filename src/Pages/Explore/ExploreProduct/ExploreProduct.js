@@ -1,8 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 
 const ExploreProduct = (props) => {
-    const {name, img, price, description } = props.scooter;
+    const {_id,name, img, price, description } = props.scooter;
+    const history = useHistory();
+    const handleOrderNow = () => {
+        history.push(`/order/${_id}`);
+    }
 
 
     return (
@@ -11,7 +16,7 @@ const ExploreProduct = (props) => {
             <img className="product-image img-fluid" src={img} alt="" />
             <h4>Price: $ {Math.ceil(price*1.15)}</h4>
             <p>{description}</p>
-            <button className="btn btn-order">Order now</button>
+            <button onClick={handleOrderNow} className="btn btn-order">Order now</button>
         </div>
     );
 };
